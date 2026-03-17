@@ -36,14 +36,14 @@ export default function ArticlesPage() {
 
   if (loading) return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#059669]"></div>
+      <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#ee4d2d]"></div>
     </div>
   );
 
   return (
     <div className="min-h-screen bg-[#f5f5f5] font-sans text-gray-800">
       {/* Navbar */}
-      <nav className="bg-[#059669] text-white sticky top-0 z-50">
+      <nav className="bg-[#ee4d2d] text-white sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-8 flex-1">
@@ -64,7 +64,7 @@ export default function ArticlesPage() {
 
       {/* Breadcrumbs */}
       <div className="max-w-7xl mx-auto px-4 py-4 text-xs text-gray-500 flex items-center gap-2">
-        <Link to="/" className="hover:text-[#059669]">หน้าแรก</Link>
+        <Link to="/" className="hover:text-[#ee4d2d]">หน้าแรก</Link>
         <ChevronRight size={12} />
         <span className="text-gray-800">บทความทั้งหมด</span>
       </div>
@@ -118,7 +118,7 @@ export default function ArticlesPage() {
                     )}
                   </div>
                   <Link to={`/articles/${article.slug}`}>
-                    <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-[#059669] transition-colors">
+                    <h2 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-[#ee4d2d] transition-colors">
                       {article.title}
                     </h2>
                   </Link>
@@ -127,7 +127,7 @@ export default function ArticlesPage() {
                   </p>
                   <Link 
                     to={`/articles/${article.slug}`}
-                    className="text-[#059669] font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all"
+                    className="text-[#ee4d2d] font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all"
                   >
                     อ่านต่อ <ChevronRight size={16} />
                   </Link>

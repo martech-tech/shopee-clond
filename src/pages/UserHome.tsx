@@ -84,7 +84,7 @@ const ProductCard: React.FC<{ product: Product, onAddToCart: (p: Product) => voi
   return (
     <motion.div 
       whileHover={{ y: -4 }}
-      className="bg-white rounded-sm shadow-sm hover:shadow-md transition-all cursor-pointer border border-transparent hover:border-[#059669] group"
+      className="bg-white rounded-sm shadow-sm hover:shadow-md transition-all cursor-pointer border border-transparent hover:border-[#ee4d2d] group"
     >
       <div className="aspect-square overflow-hidden bg-gray-100 relative">
         <img 
@@ -102,7 +102,7 @@ const ProductCard: React.FC<{ product: Product, onAddToCart: (p: Product) => voi
       <div className="p-3">
         <h3 className="text-sm line-clamp-2 h-10 mb-2 leading-relaxed">{product.name}</h3>
         <div className="flex items-center justify-between">
-          <span className="text-[#059669] text-lg font-medium">฿{product.price.toLocaleString()}</span>
+          <span className="text-[#ee4d2d] text-lg font-medium">฿{product.price.toLocaleString()}</span>
           <span className="text-[10px] text-gray-400">ขายแล้ว {product.sold_count >= 1000 ? (product.sold_count/1000).toFixed(1) + 'พัน' : product.sold_count}</span>
         </div>
         <div className="mt-2 flex items-center gap-1">
@@ -114,7 +114,7 @@ const ProductCard: React.FC<{ product: Product, onAddToCart: (p: Product) => voi
         <button 
           disabled={product.stock === 0}
           onClick={(e) => { e.stopPropagation(); onAddToCart(product); }}
-          className={`w-full mt-3 py-1.5 border border-[#059669] text-[#059669] text-sm rounded-sm transition-colors ${product.stock === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#059669] hover:text-white'}`}
+          className={`w-full mt-3 py-1.5 border border-[#ee4d2d] text-[#ee4d2d] text-sm rounded-sm transition-colors ${product.stock === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#ee4d2d] hover:text-white'}`}
         >
           {product.stock === 0 ? 'สินค้าหมด' : 'เพิ่มไปยังรถเข็น'}
         </button>
@@ -236,13 +236,13 @@ export default function UserHome() {
 
   if (loading) return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#059669]"></div>
+      <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#ee4d2d]"></div>
     </div>
   );
 
   return (
     <div className="min-h-screen bg-[#f5f5f5] font-sans text-gray-800">
-      <nav className="bg-[#059669] text-white sticky top-0 z-50">
+      <nav className="bg-[#ee4d2d] text-white sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-8 flex-1">
@@ -259,7 +259,7 @@ export default function UserHome() {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full py-2 px-4 pr-12 rounded-sm text-black focus:outline-none"
                 />
-                <button className="absolute right-1 top-1 bottom-1 px-4 bg-[#059669] rounded-sm hover:bg-[#047857] transition-colors">
+                <button className="absolute right-1 top-1 bottom-1 px-4 bg-[#ee4d2d] rounded-sm hover:bg-[#f05d40] transition-colors">
                   <Search size={20} />
                 </button>
               </div>
@@ -268,7 +268,7 @@ export default function UserHome() {
               <button onClick={() => setIsCartOpen(true)} className="relative hover:opacity-80 transition-opacity">
                 <ShoppingCart size={28} />
                 {cart.length > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-white text-[#059669] text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center border border-[#059669]">
+                  <span className="absolute -top-2 -right-2 bg-white text-[#ee4d2d] text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center border border-[#ee4d2d]">
                     {cart.reduce((s, i) => s + i.quantity, 0)}
                   </span>
                 )}
@@ -284,7 +284,7 @@ export default function UserHome() {
           {/* Main Hero - Event Category */}
           <Link 
             to={categories.find(c => c.name === 'Event') ? `/category/${categories.find(c => c.name === 'Event')?.id}` : '#'}
-            className="md:col-span-2 h-64 bg-gradient-to-r from-[#059669] to-[#34d399] rounded-sm overflow-hidden relative group cursor-pointer shadow-sm"
+            className="md:col-span-2 h-64 bg-gradient-to-r from-[#ee4d2d] to-[#ff7337] rounded-sm overflow-hidden relative group cursor-pointer shadow-sm"
           >
             <div className="absolute inset-0 flex flex-col justify-center p-12 text-white z-10">
               <h2 className="text-4xl font-bold mb-4">
@@ -293,7 +293,7 @@ export default function UserHome() {
               <p className="text-xl opacity-90 mb-6">
                 {categories.find(c => c.name === 'Event')?.name === 'Event' ? 'กิจกรรมพิเศษสำหรับคุณ' : 'พบกับโปรโมชั่นสุดพิเศษ'}
               </p>
-              <button className="bg-white text-[#059669] px-8 py-2 rounded-sm font-bold w-fit hover:bg-gray-100 transition-colors">
+              <button className="bg-white text-[#ee4d2d] px-8 py-2 rounded-sm font-bold w-fit hover:bg-gray-100 transition-colors">
                 ดูรายละเอียด
               </button>
             </div>
@@ -356,14 +356,14 @@ export default function UserHome() {
         <div className="bg-white rounded-sm shadow-sm overflow-hidden">
           <div className="p-4 border-b flex items-center justify-between">
             <h2 className="text-gray-800 font-bold text-xl">โปรโมชั่นพิเศษ</h2>
-            <Link to="/" className="text-[#059669] text-sm flex items-center gap-1">ดูโปรโมชั่นทั้งหมด <ChevronRight size={14} /></Link>
+            <Link to="/" className="text-[#ee4d2d] text-sm flex items-center gap-1">ดูโปรโมชั่นทั้งหมด <ChevronRight size={14} /></Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 divide-x divide-y md:divide-y-0">
             {/* Row 1, Col 1 & 2: Flash Sale */}
             <div className="p-4">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
-                  <h3 className="text-[#059669] font-black text-lg italic uppercase italic">Flash Sale</h3>
+                  <h3 className="text-[#ee4d2d] font-black text-lg italic uppercase italic">Flash Sale</h3>
                   <div className="flex gap-1">
                     <span className="bg-black text-white px-1.5 py-0.5 rounded-sm text-[10px] font-bold">02</span>
                     <span className="font-bold text-xs">:</span>
@@ -378,13 +378,13 @@ export default function UserHome() {
                   <div key={item.id} className="flex flex-col items-center group cursor-pointer">
                     <div className="w-full aspect-square relative mb-2 bg-gray-50 rounded-sm overflow-hidden">
                       <img src={item.image_url} className="w-full h-full object-cover group-hover:scale-110 transition-transform" referrerPolicy="no-referrer" />
-                      <div className="absolute top-0 right-0 bg-yellow-400 text-[#059669] text-[10px] font-bold px-1.5 py-0.5">
+                      <div className="absolute top-0 right-0 bg-yellow-400 text-[#ee4d2d] text-[10px] font-bold px-1.5 py-0.5">
                         -{Math.round((1 - item.flash_price / 1000) * 100)}%
                       </div>
                     </div>
-                    <div className="text-[#059669] font-bold text-sm">฿{item.flash_price.toLocaleString()}</div>
+                    <div className="text-[#ee4d2d] font-bold text-sm">฿{item.flash_price.toLocaleString()}</div>
                     <div className="w-full bg-gray-200 h-2 rounded-full mt-2 relative overflow-hidden">
-                      <div className="absolute inset-0 bg-[#059669]" style={{ width: '65%' }}></div>
+                      <div className="absolute inset-0 bg-[#ee4d2d]" style={{ width: '65%' }}></div>
                     </div>
                   </div>
                 )) : (
@@ -405,14 +405,14 @@ export default function UserHome() {
                       {d.items && d.items[0] ? (
                         <img src={products.find(p => p.id === d.items[0].product_id)?.image_url} className="w-full h-full object-cover group-hover:scale-110 transition-transform" />
                       ) : (
-                        <Percent size={40} className="text-emerald-200" />
+                        <Percent size={40} className="text-orange-200" />
                       )}
-                      <div className="absolute top-0 left-0 bg-[#059669] text-white text-[10px] font-bold px-1.5 py-0.5">
+                      <div className="absolute top-0 left-0 bg-[#ee4d2d] text-white text-[10px] font-bold px-1.5 py-0.5">
                         HOT
                       </div>
                     </div>
                     <div className="text-gray-800 font-bold text-xs line-clamp-1 text-center w-full">{d.name}</div>
-                    <div className="text-[#059669] font-bold text-sm">ลด {d.type === 'percent' ? `${d.value}%` : `฿${d.value}`}</div>
+                    <div className="text-[#ee4d2d] font-bold text-sm">ลด {d.type === 'percent' ? `${d.value}%` : `฿${d.value}`}</div>
                   </div>
                 )) : (
                   <div className="col-span-2 py-10 text-center text-gray-400 text-xs italic">ไม่มีส่วนลดสินค้า</div>
@@ -429,17 +429,17 @@ export default function UserHome() {
           <h2 className="text-gray-500 uppercase text-sm font-medium tracking-wider mb-4">โค้ดส่วนลดแนะนำ</h2>
           <div className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
             {coupons.length > 0 ? coupons.map(coupon => (
-              <div key={coupon.id} className="flex-shrink-0 bg-white border border-[#059669]/20 px-6 py-4 rounded-sm flex items-center gap-4 shadow-sm relative overflow-hidden group">
-                <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#059669]"></div>
-                <div className="bg-[#059669] text-white p-2 rounded-md">
+              <div key={coupon.id} className="flex-shrink-0 bg-white border border-[#ee4d2d]/20 px-6 py-4 rounded-sm flex items-center gap-4 shadow-sm relative overflow-hidden group">
+                <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#ee4d2d]"></div>
+                <div className="bg-[#ee4d2d] text-white p-2 rounded-md">
                   <Tag size={24} />
                 </div>
                 <div>
-                  <div className="font-bold text-[#059669]">{coupon.name}</div>
+                  <div className="font-bold text-[#ee4d2d]">{coupon.name}</div>
                   <div className="text-xs text-gray-500">ลด {coupon.type === 'percent' ? `${coupon.value}%` : `฿${coupon.value}`} (ขั้นต่ำ ฿{coupon.min_spend})</div>
                   <div className="text-[10px] font-mono text-gray-400 mt-1 uppercase">Code: {coupon.code}</div>
                 </div>
-                <button className="bg-[#059669] text-white px-4 py-1 rounded-sm text-xs font-bold hover:bg-[#047857] transition-colors">เก็บโค้ด</button>
+                <button className="bg-[#ee4d2d] text-white px-4 py-1 rounded-sm text-xs font-bold hover:bg-[#f05d40] transition-colors">เก็บโค้ด</button>
               </div>
             )) : (
               <div className="w-full py-6 text-center text-gray-400 text-sm italic">ไม่มีโค้ดส่วนลดในขณะนี้</div>
@@ -456,7 +456,7 @@ export default function UserHome() {
             {selectedCategoryId && (
               <button 
                 onClick={() => setSelectedCategoryId(null)}
-                className="text-[#059669] text-sm font-bold"
+                className="text-[#ee4d2d] text-sm font-bold"
               >
                 ล้างตัวกรอง
               </button>
@@ -467,12 +467,12 @@ export default function UserHome() {
               <div 
                 key={cat.id} 
                 onClick={() => setSelectedCategoryId(cat.id === selectedCategoryId ? null : cat.id)}
-                className={`p-4 flex flex-col items-center gap-2 hover:bg-gray-50 cursor-pointer transition-colors ${selectedCategoryId === cat.id ? 'bg-[#059669]/5 ring-1 ring-inset ring-[#059669]' : ''}`}
+                className={`p-4 flex flex-col items-center gap-2 hover:bg-gray-50 cursor-pointer transition-colors ${selectedCategoryId === cat.id ? 'bg-[#ee4d2d]/5 ring-1 ring-inset ring-[#ee4d2d]' : ''}`}
               >
-                <div className={`w-16 h-16 rounded-full flex items-center justify-center transition-colors ${selectedCategoryId === cat.id ? 'bg-[#059669] text-white' : 'bg-gray-100 text-[#059669]'}`}>
+                <div className={`w-16 h-16 rounded-full flex items-center justify-center transition-colors ${selectedCategoryId === cat.id ? 'bg-[#ee4d2d] text-white' : 'bg-gray-100 text-[#ee4d2d]'}`}>
                   {cat.name[0]}
                 </div>
-                <span className={`text-xs text-center font-medium ${selectedCategoryId === cat.id ? 'text-[#059669]' : 'text-gray-600'}`}>{cat.name}</span>
+                <span className={`text-xs text-center font-medium ${selectedCategoryId === cat.id ? 'text-[#ee4d2d]' : 'text-gray-600'}`}>{cat.name}</span>
               </div>
             ))}
           </div>
@@ -482,7 +482,7 @@ export default function UserHome() {
       {/* 5. สินค้าแนะนำสำหรับคุณ */}
       <div className="max-w-7xl mx-auto px-4 mt-8">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-lg font-medium border-b-4 border-[#059669] pb-1">
+          <h2 className="text-lg font-medium border-b-4 border-[#ee4d2d] pb-1">
             {selectedCategoryId 
               ? `สินค้าในหมวดหมู่: ${categories.find(c => c.id === selectedCategoryId)?.name}` 
               : searchQuery 
@@ -501,7 +501,7 @@ export default function UserHome() {
             <p className="text-lg">ไม่พบสินค้าที่คุณต้องการ</p>
             <button 
               onClick={() => { setSelectedCategoryId(null); setSearchQuery(''); }}
-              className="mt-4 text-[#059669] underline"
+              className="mt-4 text-[#ee4d2d] underline"
             >
               ดูสินค้าทั้งหมด
             </button>
@@ -512,8 +512,8 @@ export default function UserHome() {
       {/* 6. บทความที่แนะนำ สูงสุด 5 slot ที่โชว์แบบ defalt หากดูเพิ่มให้คลิกดูเพิ่มเติม */}
       <div className="max-w-7xl mx-auto px-4 mt-16 pb-20">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl font-bold text-gray-800 border-b-4 border-[#059669] pb-1">บทความแนะนำ</h2>
-          <Link to="/articles" className="text-[#059669] text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all">
+          <h2 className="text-xl font-bold text-gray-800 border-b-4 border-[#ee4d2d] pb-1">บทความแนะนำ</h2>
+          <Link to="/articles" className="text-[#ee4d2d] text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all">
             ดูบทความทั้งหมด <ChevronRight size={16} />
           </Link>
         </div>
@@ -534,11 +534,11 @@ export default function UserHome() {
                   {article.is_recommended === 1 && (
                     <div className="text-[9px] font-bold text-emerald-600 mb-1">บทความที่แนะนำในหน้าแรก</div>
                   )}
-                  <h3 className="font-bold text-sm text-gray-900 line-clamp-2 mb-2 group-hover:text-[#059669] transition-colors">{article.title}</h3>
+                  <h3 className="font-bold text-sm text-gray-900 line-clamp-2 mb-2 group-hover:text-[#ee4d2d] transition-colors">{article.title}</h3>
                   <p className="text-[10px] text-gray-500 line-clamp-2 mb-4 flex-1">{article.meta_description || article.content.replace(/<[^>]*>/g, '').substring(0, 60)}</p>
                   <div className="flex items-center justify-between text-[9px] text-gray-400 mt-auto pt-2 border-t">
                     <span>{new Date(article.created_at).toLocaleDateString('th-TH')}</span>
-                    <span className="text-[#059669] font-bold">อ่านต่อ</span>
+                    <span className="text-[#ee4d2d] font-bold">อ่านต่อ</span>
                   </div>
                 </div>
               </Link>
@@ -552,7 +552,7 @@ export default function UserHome() {
         
         {recommendedArticles.length > 5 && (
           <div className="mt-8 text-center">
-            <Link to="/articles" className="inline-flex items-center gap-2 px-8 py-2 border border-[#059669] text-[#059669] font-bold rounded-sm hover:bg-[#059669] hover:text-white transition-all">
+            <Link to="/articles" className="inline-flex items-center gap-2 px-8 py-2 border border-[#ee4d2d] text-[#ee4d2d] font-bold rounded-sm hover:bg-[#ee4d2d] hover:text-white transition-all">
               ดูบทความเพิ่มเติม
             </Link>
           </div>
@@ -578,7 +578,7 @@ export default function UserHome() {
             >
               <div className="p-4 border-b flex items-center justify-between">
                 <h2 className="text-xl font-bold flex items-center gap-2">
-                  <ShoppingCart className="text-[#059669]" />
+                  <ShoppingCart className="text-[#ee4d2d]" />
                   รถเข็นของฉัน ({cart.length})
                 </h2>
                 <button onClick={() => setIsCartOpen(false)} className="p-2 hover:bg-gray-100 rounded-full">
@@ -592,7 +592,7 @@ export default function UserHome() {
                     <p>รถเข็นของคุณยังว่างอยู่</p>
                     <button 
                       onClick={() => setIsCartOpen(false)}
-                      className="text-[#059669] border border-[#059669] px-6 py-2 rounded-sm"
+                      className="text-[#ee4d2d] border border-[#ee4d2d] px-6 py-2 rounded-sm"
                     >
                       ไปช้อปเลย
                     </button>
@@ -603,7 +603,7 @@ export default function UserHome() {
                       <img src={item.image_url} className="w-20 h-20 object-cover rounded-md bg-white" referrerPolicy="no-referrer" />
                       <div className="flex-1">
                         <h4 className="text-sm font-medium line-clamp-1">{item.name}</h4>
-                        <div className="text-[#059669] font-bold mt-1">฿{item.price.toLocaleString()}</div>
+                        <div className="text-[#ee4d2d] font-bold mt-1">฿{item.price.toLocaleString()}</div>
                         <div className="flex items-center gap-3 mt-2">
                           <div className="flex items-center border rounded-sm bg-white">
                             <button onClick={() => updateCartQuantity(item.id, -1)} className="px-2 py-1 hover:bg-gray-100 border-r">-</button>
@@ -623,11 +623,11 @@ export default function UserHome() {
                 <div className="p-6 border-t bg-gray-50">
                   <div className="flex justify-between mb-4">
                     <span className="text-gray-600">ยอดรวมทั้งหมด</span>
-                    <span className="text-2xl font-bold text-[#059669]">฿{totalAmount.toLocaleString()}</span>
+                    <span className="text-2xl font-bold text-[#ee4d2d]">฿{totalAmount.toLocaleString()}</span>
                   </div>
                   <button 
                     onClick={handleCheckout}
-                    className="w-full bg-[#059669] text-white py-4 rounded-sm font-bold text-lg hover:bg-[#047857] transition-colors shadow-lg shadow-[#059669]/20"
+                    className="w-full bg-[#ee4d2d] text-white py-4 rounded-sm font-bold text-lg hover:bg-[#f05d40] transition-colors shadow-lg shadow-[#ee4d2d]/20"
                   >
                     ชำระเงิน
                   </button>

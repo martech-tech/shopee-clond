@@ -53,14 +53,14 @@ export default function ArticleDetailPage() {
 
   if (loading) return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#059669]"></div>
+      <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#ee4d2d]"></div>
     </div>
   );
 
   if (!article) return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-50 p-4">
       <h1 className="text-2xl font-bold text-gray-800 mb-4">ไม่พบหน้าบทความที่คุณต้องการ</h1>
-      <Link to="/articles" className="text-[#059669] border border-[#059669] px-6 py-2 rounded-sm hover:bg-[#059669] hover:text-white transition-colors">
+      <Link to="/articles" className="text-[#ee4d2d] border border-[#ee4d2d] px-6 py-2 rounded-sm hover:bg-[#ee4d2d] hover:text-white transition-colors">
         กลับไปหน้าบทความทั้งหมด
       </Link>
     </div>
@@ -69,7 +69,7 @@ export default function ArticleDetailPage() {
   return (
     <div className="min-h-screen bg-[#f5f5f5] font-sans text-gray-800">
       {/* Navbar */}
-      <nav className="bg-[#059669] text-white sticky top-0 z-50">
+      <nav className="bg-[#ee4d2d] text-white sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-3">
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-8 flex-1">
@@ -90,9 +90,9 @@ export default function ArticleDetailPage() {
 
       {/* Breadcrumbs */}
       <div className="max-w-4xl mx-auto px-4 py-4 text-xs text-gray-500 flex items-center gap-2">
-        <Link to="/" className="hover:text-[#059669]">หน้าแรก</Link>
+        <Link to="/" className="hover:text-[#ee4d2d]">หน้าแรก</Link>
         <ChevronRight size={12} />
-        <Link to="/articles" className="hover:text-[#059669]">บทความทั้งหมด</Link>
+        <Link to="/articles" className="hover:text-[#ee4d2d]">บทความทั้งหมด</Link>
         <ChevronRight size={12} />
         <span className="text-gray-800 line-clamp-1">{article.title}</span>
       </div>
@@ -135,7 +135,7 @@ export default function ArticleDetailPage() {
                 <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">แชร์:</span>
                 <button className="text-gray-400 hover:text-[#1877F2] transition-colors"><Facebook size={18} /></button>
                 <button className="text-gray-400 hover:text-[#1DA1F2] transition-colors"><Twitter size={18} /></button>
-                <button className="text-gray-400 hover:text-[#059669] transition-colors"><LinkIcon size={18} /></button>
+                <button className="text-gray-400 hover:text-[#ee4d2d] transition-colors"><LinkIcon size={18} /></button>
               </div>
             </div>
 
@@ -154,7 +154,7 @@ export default function ArticleDetailPage() {
             {article.recommended_products && article.recommended_products.length > 0 && (
               <div className="mt-16 pt-12 border-t">
                 <h3 className="text-xl font-bold text-gray-900 mb-8 flex items-center gap-2">
-                  <ShoppingCart className="text-[#059669]" />
+                  <ShoppingCart className="text-[#ee4d2d]" />
                   สินค้าที่เกี่ยวข้องในบทความนี้
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -174,7 +174,7 @@ export default function ArticleDetailPage() {
                       </div>
                       <div className="p-3">
                         <h4 className="text-xs line-clamp-2 h-8 mb-2 font-medium">{product.name}</h4>
-                        <div className="text-[#059669] font-bold text-sm">฿{product.price.toLocaleString()}</div>
+                        <div className="text-[#ee4d2d] font-bold text-sm">฿{product.price.toLocaleString()}</div>
                         <div className="flex items-center justify-between mt-2">
                           <div className="flex text-yellow-400">
                             <Star size={8} fill="currentColor" />
@@ -187,7 +187,7 @@ export default function ArticleDetailPage() {
                         </div>
                         <Link 
                           to="/" 
-                          className="block w-full text-center mt-3 py-1 bg-[#059669] text-white text-[10px] font-bold rounded-sm hover:bg-[#047857] transition-colors"
+                          className="block w-full text-center mt-3 py-1 bg-[#ee4d2d] text-white text-[10px] font-bold rounded-sm hover:bg-[#f05d40] transition-colors"
                         >
                           ดูรายละเอียด
                         </Link>
@@ -202,12 +202,12 @@ export default function ArticleDetailPage() {
 
         {/* Navigation */}
         <div className="mt-12 flex justify-between items-center">
-          <Link to="/articles" className="text-gray-500 hover:text-[#059669] flex items-center gap-2 text-sm font-medium">
+          <Link to="/articles" className="text-gray-500 hover:text-[#ee4d2d] flex items-center gap-2 text-sm font-medium">
             <ChevronRight className="rotate-180" size={16} />
             กลับไปหน้าบทความ
           </Link>
           <div className="flex items-center gap-4">
-            <button className="flex items-center gap-2 text-gray-500 hover:text-[#059669] text-sm font-medium">
+            <button className="flex items-center gap-2 text-gray-500 hover:text-[#ee4d2d] text-sm font-medium">
               <Share2 size={16} />
               แชร์บทความนี้
             </button>
@@ -229,7 +229,7 @@ export default function ArticleDetailPage() {
         .article-content ul, .article-content ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
         .article-content li { margin-bottom: 0.5rem; }
         .article-content img { border-radius: 0.25rem; margin: 2rem 0; }
-        .article-content a { color: #059669; text-decoration: underline; }
+        .article-content a { color: #ee4d2d; text-decoration: underline; }
       `}} />
     </div>
   );

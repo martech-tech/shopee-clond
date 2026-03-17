@@ -235,7 +235,7 @@ export default function AdminDashboard() {
   const renderSidebarItem = (id: AdminTab, icon: any, label: string) => (
     <button 
       onClick={() => { setActiveTab(id); setIsEditing(null); }}
-      className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${activeTab === id || (id === 'marketing' && ['flash-sale', 'discount', 'coupon'].includes(activeTab)) ? 'bg-[#059669] text-white shadow-md' : 'hover:bg-gray-100 text-gray-600'}`}
+      className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${activeTab === id || (id === 'marketing' && ['flash-sale', 'discount', 'coupon'].includes(activeTab)) ? 'bg-[#ee4d2d] text-white shadow-md' : 'hover:bg-gray-100 text-gray-600'}`}
     >
       {icon}
       <span className="font-medium">{label}</span>
@@ -392,7 +392,7 @@ export default function AdminDashboard() {
 
   if (loading) return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#059669]"></div>
+      <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[#ee4d2d]"></div>
     </div>
   );
 
@@ -401,7 +401,7 @@ export default function AdminDashboard() {
       {/* Sidebar */}
       <aside className="w-72 bg-white shadow-xl flex flex-col sticky top-0 h-screen z-20">
         <div className="p-6 border-b flex items-center gap-3">
-          <div className="bg-[#059669] p-2 rounded-xl text-white shadow-lg shadow-[#059669]/30">
+          <div className="bg-[#ee4d2d] p-2 rounded-xl text-white shadow-lg shadow-[#ee4d2d]/30">
             <ShoppingBag size={24} />
           </div>
           <h1 className="font-bold text-xl tracking-tight">Seller Centre</h1>
@@ -422,9 +422,9 @@ export default function AdminDashboard() {
           
           {(activeTab === 'marketing' || ['flash-sale', 'discount', 'coupon'].includes(activeTab)) && (
             <div className="ml-4 pl-4 border-l-2 border-gray-100 space-y-1 mt-2">
-              <button onClick={() => setActiveTab('flash-sale')} className={`w-full text-left px-3 py-2 rounded-md text-sm ${activeTab === 'flash-sale' ? 'text-[#059669] font-bold' : 'text-gray-500 hover:text-black'}`}>Flash Sale</button>
-              <button onClick={() => setActiveTab('discount')} className={`w-full text-left px-3 py-2 rounded-md text-sm ${activeTab === 'discount' ? 'text-[#059669] font-bold' : 'text-gray-500 hover:text-black'}`}>ส่วนลด</button>
-              <button onClick={() => setActiveTab('coupon')} className={`w-full text-left px-3 py-2 rounded-md text-sm ${activeTab === 'coupon' ? 'text-[#059669] font-bold' : 'text-gray-500 hover:text-black'}`}>คูปอง</button>
+              <button onClick={() => setActiveTab('flash-sale')} className={`w-full text-left px-3 py-2 rounded-md text-sm ${activeTab === 'flash-sale' ? 'text-[#ee4d2d] font-bold' : 'text-gray-500 hover:text-black'}`}>Flash Sale</button>
+              <button onClick={() => setActiveTab('discount')} className={`w-full text-left px-3 py-2 rounded-md text-sm ${activeTab === 'discount' ? 'text-[#ee4d2d] font-bold' : 'text-gray-500 hover:text-black'}`}>ส่วนลด</button>
+              <button onClick={() => setActiveTab('coupon')} className={`w-full text-left px-3 py-2 rounded-md text-sm ${activeTab === 'coupon' ? 'text-[#ee4d2d] font-bold' : 'text-gray-500 hover:text-black'}`}>คูปอง</button>
             </div>
           )}
         </nav>
@@ -467,13 +467,13 @@ export default function AdminDashboard() {
                     placeholder="ค้นหาชื่อสินค้า..." 
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-10 pr-4 py-2 bg-gray-100 border-transparent focus:bg-white focus:ring-2 focus:ring-[#059669] rounded-full text-sm outline-none transition-all w-48"
+                    className="pl-10 pr-4 py-2 bg-gray-100 border-transparent focus:bg-white focus:ring-2 focus:ring-[#ee4d2d] rounded-full text-sm outline-none transition-all w-48"
                   />
                 </div>
                 <select 
                   value={selectedFilterCategory || ''} 
                   onChange={(e) => setSelectedFilterCategory(e.target.value ? Number(e.target.value) : null)}
-                  className="px-4 py-2 bg-gray-100 border-transparent focus:bg-white focus:ring-2 focus:ring-[#059669] rounded-full text-sm outline-none transition-all"
+                  className="px-4 py-2 bg-gray-100 border-transparent focus:bg-white focus:ring-2 focus:ring-[#ee4d2d] rounded-full text-sm outline-none transition-all"
                 >
                   <option value="">ทุกหมวดหมู่</option>
                   {categories.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
@@ -484,7 +484,7 @@ export default function AdminDashboard() {
             {activeTab === 'products' && !isEditing && (
               <button 
                 onClick={() => setIsEditing({ images: '[]' })}
-                className="bg-[#059669] text-white px-6 py-2 rounded-full flex items-center gap-2 hover:bg-[#047857] transition-all shadow-lg shadow-[#059669]/20 active:scale-95"
+                className="bg-[#ee4d2d] text-white px-6 py-2 rounded-full flex items-center gap-2 hover:bg-[#f05d40] transition-all shadow-lg shadow-[#ee4d2d]/20 active:scale-95"
               >
                 <Plus size={20} /> เพิ่มสินค้าใหม่
               </button>
@@ -499,7 +499,7 @@ export default function AdminDashboard() {
                   setNewCategoryHeadline('');
                   setShowCatModal(true); 
                 }}
-                className="bg-[#059669] text-white px-6 py-2 rounded-full flex items-center gap-2 hover:bg-[#047857] transition-all shadow-lg shadow-[#059669]/20 active:scale-95"
+                className="bg-[#ee4d2d] text-white px-6 py-2 rounded-full flex items-center gap-2 hover:bg-[#f05d40] transition-all shadow-lg shadow-[#ee4d2d]/20 active:scale-95"
               >
                 <Plus size={20} /> เพิ่มหมวดหมู่ใหม่
               </button>
@@ -508,7 +508,7 @@ export default function AdminDashboard() {
             {activeTab === 'ads' && !isEditingAd && (
               <button 
                 onClick={() => setIsEditingAd({ active: 1, position: 'home_top' })}
-                className="bg-[#059669] text-white px-6 py-2 rounded-full flex items-center gap-2 hover:bg-[#047857] transition-all shadow-lg shadow-[#059669]/20 active:scale-95"
+                className="bg-[#ee4d2d] text-white px-6 py-2 rounded-full flex items-center gap-2 hover:bg-[#f05d40] transition-all shadow-lg shadow-[#ee4d2d]/20 active:scale-95"
               >
                 <Plus size={20} /> เพิ่มโฆษณาใหม่
               </button>
@@ -517,7 +517,7 @@ export default function AdminDashboard() {
             {activeTab === 'articles' && !isEditingArticle && (
               <button 
                 onClick={() => setIsEditingArticle({ title: '', slug: '', content: '', meta_title: '', meta_description: '', thumbnail_url: '', product_ids: [] })}
-                className="bg-[#059669] text-white px-6 py-2 rounded-full flex items-center gap-2 hover:bg-[#047857] transition-all shadow-lg shadow-[#059669]/20 active:scale-95"
+                className="bg-[#ee4d2d] text-white px-6 py-2 rounded-full flex items-center gap-2 hover:bg-[#f05d40] transition-all shadow-lg shadow-[#ee4d2d]/20 active:scale-95"
               >
                 <Plus size={20} /> เขียนบทความใหม่
               </button>
@@ -544,27 +544,27 @@ export default function AdminDashboard() {
                     <div className="space-y-6">
                       <div>
                         <label className="block text-sm font-bold text-gray-700 mb-2">ชื่อสินค้า</label>
-                        <input name="name" defaultValue={isEditing.name} required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none transition-all" placeholder="ระบุชื่อสินค้า..." />
+                        <input name="name" defaultValue={isEditing.name} required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none transition-all" placeholder="ระบุชื่อสินค้า..." />
                       </div>
                       <div>
                         <label className="block text-sm font-bold text-gray-700 mb-2">รายละเอียดสินค้า</label>
-                        <textarea name="description" defaultValue={isEditing.description} className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none transition-all h-40" placeholder="ระบุรายละเอียด..." />
+                        <textarea name="description" defaultValue={isEditing.description} className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none transition-all h-40" placeholder="ระบุรายละเอียด..." />
                       </div>
                       <div className="grid grid-cols-2 gap-4">
                         <div>
                           <label className="block text-sm font-bold text-gray-700 mb-2">ราคา (บาท)</label>
-                          <input name="price" type="number" step="0.01" defaultValue={isEditing.price} required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none transition-all" />
+                          <input name="price" type="number" step="0.01" defaultValue={isEditing.price} required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none transition-all" />
                         </div>
                         <div>
                           <label className="block text-sm font-bold text-gray-700 mb-2">จำนวนสต็อก</label>
-                          <input name="stock" type="number" defaultValue={isEditing.stock} required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none transition-all" />
+                          <input name="stock" type="number" defaultValue={isEditing.stock} required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none transition-all" />
                         </div>
                       </div>
                       <div className="grid grid-cols-2 gap-4">
                         <div>
                           <label className="block text-sm font-bold text-gray-700 mb-2">หมวดหมู่</label>
                           <div className="flex gap-2">
-                            <select name="category_id" defaultValue={isEditing.category_id} className="flex-1 p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none transition-all">
+                            <select name="category_id" defaultValue={isEditing.category_id} className="flex-1 p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none transition-all">
                               <option value="">เลือกหมวดหมู่</option>
                               {categories.map(c => <option key={c.id} value={c.id}>{c.name}</option>)}
                             </select>
@@ -575,7 +575,7 @@ export default function AdminDashboard() {
                         </div>
                         <div>
                           <label className="block text-sm font-bold text-gray-700 mb-2">จำนวนที่ขายได้</label>
-                          <input name="sold_count" type="number" defaultValue={isEditing.sold_count} className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none transition-all" />
+                          <input name="sold_count" type="number" defaultValue={isEditing.sold_count} className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none transition-all" />
                         </div>
                       </div>
                     </div>
@@ -593,7 +593,7 @@ export default function AdminDashboard() {
                               </div>
                             </>
                           ) : (
-                            <label className="cursor-pointer flex flex-col items-center text-gray-400 hover:text-[#059669] transition-colors">
+                            <label className="cursor-pointer flex flex-col items-center text-gray-400 hover:text-[#ee4d2d] transition-colors">
                               <Upload size={24} />
                               <span className="text-[10px] mt-1 font-bold">ภาพหลัก</span>
                               <input type="file" className="hidden" onChange={(e) => handleImageUpload(e, 'primary')} />
@@ -614,7 +614,7 @@ export default function AdminDashboard() {
                                   </div>
                                 </>
                               ) : (
-                                <label className="cursor-pointer flex flex-col items-center text-gray-400 hover:text-[#059669] transition-colors">
+                                <label className="cursor-pointer flex flex-col items-center text-gray-400 hover:text-[#ee4d2d] transition-colors">
                                   <Plus size={20} />
                                   <span className="text-[10px] mt-1 font-bold">ภาพ {i+2}</span>
                                   <input type="file" className="hidden" onChange={(e) => handleImageUpload(e, i)} />
@@ -628,7 +628,7 @@ export default function AdminDashboard() {
                     </div>
                   </div>
 
-                  <button type="submit" className="w-full bg-[#059669] text-white py-5 rounded-2xl font-bold text-xl hover:bg-[#047857] transition-all shadow-xl shadow-[#059669]/20 active:scale-[0.98]">
+                  <button type="submit" className="w-full bg-[#ee4d2d] text-white py-5 rounded-2xl font-bold text-xl hover:bg-[#f05d40] transition-all shadow-xl shadow-[#ee4d2d]/20 active:scale-[0.98]">
                     บันทึกข้อมูลสินค้า
                   </button>
                 </form>
@@ -658,7 +658,7 @@ export default function AdminDashboard() {
                             </div>
                             <div>
                               <div className="font-bold text-gray-800 line-clamp-1">{product.name}</div>
-                              <div className="text-[10px] text-[#059669] font-bold bg-[#059669]/5 px-2 py-0.5 rounded-full w-fit mt-1">{product.category_name}</div>
+                              <div className="text-[10px] text-[#ee4d2d] font-bold bg-[#ee4d2d]/5 px-2 py-0.5 rounded-full w-fit mt-1">{product.category_name}</div>
                             </div>
                           </div>
                         </td>
@@ -770,13 +770,13 @@ export default function AdminDashboard() {
             <div className="space-y-10">
               <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
                 <h3 className="text-lg font-bold mb-6 flex items-center gap-2">
-                  <Tag className="text-[#059669]" size={20} /> เครื่องมือส่งเสริมการขาย
+                  <Tag className="text-[#ee4d2d]" size={20} /> เครื่องมือส่งเสริมการขาย
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {[
-                    { id: 'discount', icon: <Percent size={24} />, title: 'ส่วนลด', desc: 'ตั้งโปรโมชันส่วนลดให้กับสินค้าที่ต้องการเพิ่มยอดขาย', color: 'bg-emerald-500' },
-                    { id: 'flash-sale', icon: <Clock size={24} />, title: 'Flash Sale ในร้านค้า', desc: 'เพิ่มยอดขายสินค้าโดยจัดโปรโมชันส่วนลดแบบจำกัดเวลาในร้านค้าของคุณ', color: 'bg-emerald-700' },
-                    { id: 'coupon', icon: <Ticket size={24} />, title: 'โค้ดส่วนลด', desc: 'เพิ่มยอดคำสั่งซื้อโดยมอบโค้ดส่วนลดประจำร้านค้าให้ผู้ซื้อ', color: 'bg-emerald-600' }
+                    { id: 'discount', icon: <Percent size={24} />, title: 'ส่วนลด', desc: 'ตั้งโปรโมชันส่วนลดให้กับสินค้าที่ต้องการเพิ่มยอดขาย', color: 'bg-orange-500' },
+                    { id: 'flash-sale', icon: <Clock size={24} />, title: 'Flash Sale ในร้านค้า', desc: 'เพิ่มยอดขายสินค้าโดยจัดโปรโมชันส่วนลดแบบจำกัดเวลาในร้านค้าของคุณ', color: 'bg-red-500' },
+                    { id: 'coupon', icon: <Ticket size={24} />, title: 'โค้ดส่วนลด', desc: 'เพิ่มยอดคำสั่งซื้อโดยมอบโค้ดส่วนลดประจำร้านค้าให้ผู้ซื้อ', color: 'bg-orange-600' }
                   ].map(tool => (
                     <button 
                       key={tool.id}
@@ -823,7 +823,7 @@ export default function AdminDashboard() {
                   <p className="text-sm text-gray-400 mt-1">เลือกสินค้าสูงสุด 20 ชิ้นต่อช่วงเวลา</p>
                 </div>
                 {!isCreatingFlashSale && (
-                  <button onClick={() => { setIsCreatingFlashSale(true); setSelectedProducts([]); }} className="bg-[#059669] text-white px-6 py-3 rounded-full font-bold shadow-lg shadow-[#059669]/20">สร้างแคมเปญใหม่</button>
+                  <button onClick={() => { setIsCreatingFlashSale(true); setSelectedProducts([]); }} className="bg-[#ee4d2d] text-white px-6 py-3 rounded-full font-bold shadow-lg shadow-[#ee4d2d]/20">สร้างแคมเปญใหม่</button>
                 )}
               </div>
               
@@ -836,15 +836,15 @@ export default function AdminDashboard() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                       <div>
                         <label className="block text-sm font-bold text-gray-700 mb-2">ชื่อแคมเปญ</label>
-                        <input name="name" required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none" placeholder="เช่น Flash Sale ประจำวัน" />
+                        <input name="name" required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none" placeholder="เช่น Flash Sale ประจำวัน" />
                       </div>
                       <div>
                         <label className="block text-sm font-bold text-gray-700 mb-2">วันที่จัดแคมเปญ</label>
-                        <input name="date" type="date" required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none" />
+                        <input name="date" type="date" required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none" />
                       </div>
                       <div>
                         <label className="block text-sm font-bold text-gray-700 mb-2">ช่วงเวลา</label>
-                        <select name="time_slot" required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none">
+                        <select name="time_slot" required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none">
                           {['00:00-05:00', '05:00-09:00', '09:00-13:00', '13:00-17:00', '17:00-21:00', '21:00-00:00'].map(s => <option key={s} value={s}>{s}</option>)}
                         </select>
                       </div>
@@ -863,7 +863,7 @@ export default function AdminDashboard() {
                                 setSelectedProducts([...selectedProducts, p.id]);
                               }
                             }}
-                            className={`p-4 border-2 rounded-2xl cursor-pointer transition-all ${selectedProducts.includes(p.id) ? 'border-[#059669] bg-[#059669]/5' : 'border-gray-100 hover:border-gray-200'}`}
+                            className={`p-4 border-2 rounded-2xl cursor-pointer transition-all ${selectedProducts.includes(p.id) ? 'border-[#ee4d2d] bg-[#ee4d2d]/5' : 'border-gray-100 hover:border-gray-200'}`}
                           >
                             <img src={p.image_url} className="w-full aspect-square object-cover rounded-xl mb-2" />
                             <div className="text-xs font-bold line-clamp-1">{p.name}</div>
@@ -886,11 +886,11 @@ export default function AdminDashboard() {
                                 <div className="flex gap-4">
                                   <div className="w-32">
                                     <label className="text-[10px] text-gray-400 block mb-1">ราคา Flash (฿)</label>
-                                    <input name={`price_${id}`} type="number" step="0.01" required className="w-full p-2 bg-gray-50 rounded-lg text-sm outline-none focus:ring-1 focus:ring-[#059669]" placeholder="0.00" />
+                                    <input name={`price_${id}`} type="number" step="0.01" required className="w-full p-2 bg-gray-50 rounded-lg text-sm outline-none focus:ring-1 focus:ring-[#ee4d2d]" placeholder="0.00" />
                                   </div>
                                   <div className="w-32">
                                     <label className="text-[10px] text-gray-400 block mb-1">จำนวน (ชิ้น)</label>
-                                    <input name={`qty_${id}`} type="number" required className="w-full p-2 bg-gray-50 rounded-lg text-sm outline-none focus:ring-1 focus:ring-[#059669]" placeholder="0" />
+                                    <input name={`qty_${id}`} type="number" required className="w-full p-2 bg-gray-50 rounded-lg text-sm outline-none focus:ring-1 focus:ring-[#ee4d2d]" placeholder="0" />
                                   </div>
                                 </div>
                               </div>
@@ -900,7 +900,7 @@ export default function AdminDashboard() {
                       </div>
                     )}
 
-                    <button type="submit" className="w-full bg-[#059669] text-white py-5 rounded-2xl font-bold text-xl shadow-xl shadow-[#059669]/20">
+                    <button type="submit" className="w-full bg-[#ee4d2d] text-white py-5 rounded-2xl font-bold text-xl shadow-xl shadow-[#ee4d2d]/20">
                       ยืนยันการสร้าง Flash Sale
                     </button>
                   </form>
@@ -909,9 +909,9 @@ export default function AdminDashboard() {
                 <>
                   <div className="grid grid-cols-6 gap-2">
                     {['00:00-05:00', '05:00-09:00', '09:00-13:00', '13:00-17:00', '17:00-21:00', '21:00-00:00'].map(slot => (
-                      <button key={slot} className="p-4 bg-white border border-gray-100 rounded-2xl hover:border-[#059669] transition-all text-center group">
+                      <button key={slot} className="p-4 bg-white border border-gray-100 rounded-2xl hover:border-[#ee4d2d] transition-all text-center group">
                         <div className="text-[10px] font-bold text-gray-400 uppercase mb-1">ช่วงเวลา</div>
-                        <div className="font-bold text-gray-800 group-hover:text-[#059669]">{slot}</div>
+                        <div className="font-bold text-gray-800 group-hover:text-[#ee4d2d]">{slot}</div>
                       </button>
                     ))}
                   </div>
@@ -961,7 +961,7 @@ export default function AdminDashboard() {
                   <p className="text-sm text-gray-400 mt-1">สร้างส่วนลดให้กับสินค้าเพื่อกระตุ้นยอดขาย</p>
                 </div>
                 {!isCreatingDiscount && (
-                  <button onClick={() => { setIsCreatingDiscount(true); setSelectedProducts([]); }} className="bg-[#059669] text-white px-6 py-3 rounded-full font-bold shadow-lg shadow-[#059669]/20">สร้างโปรโมชันใหม่</button>
+                  <button onClick={() => { setIsCreatingDiscount(true); setSelectedProducts([]); }} className="bg-[#ee4d2d] text-white px-6 py-3 rounded-full font-bold shadow-lg shadow-[#ee4d2d]/20">สร้างโปรโมชันใหม่</button>
                 )}
               </div>
 
@@ -974,32 +974,32 @@ export default function AdminDashboard() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <label className="block text-sm font-bold text-gray-700 mb-2">ชื่อโปรโมชัน</label>
-                        <input name="name" required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none" placeholder="เช่น ส่วนลดต้อนรับซัมเมอร์" />
+                        <input name="name" required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none" placeholder="เช่น ส่วนลดต้อนรับซัมเมอร์" />
                       </div>
                       <div className="grid grid-cols-2 gap-4">
                         <div>
                           <label className="block text-sm font-bold text-gray-700 mb-2">ประเภทส่วนลด</label>
-                          <select name="type" required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none">
+                          <select name="type" required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none">
                             <option value="percent">เปอร์เซ็นต์ (%)</option>
                             <option value="fixed">จำนวนเงินคงที่ (฿)</option>
                           </select>
                         </div>
                         <div>
                           <label className="block text-sm font-bold text-gray-700 mb-2">มูลค่าส่วนลด</label>
-                          <input name="value" type="number" step="0.01" required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none" placeholder="0.00" />
+                          <input name="value" type="number" step="0.01" required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none" placeholder="0.00" />
                         </div>
                       </div>
                       <div>
                         <label className="block text-sm font-bold text-gray-700 mb-2">เวลาเริ่มต้น</label>
-                        <input name="start_time" type="datetime-local" required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none" />
+                        <input name="start_time" type="datetime-local" required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none" />
                       </div>
                       <div>
                         <label className="block text-sm font-bold text-gray-700 mb-2">เวลาสิ้นสุด</label>
-                        <input name="end_time" type="datetime-local" required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none" />
+                        <input name="end_time" type="datetime-local" required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none" />
                       </div>
                       <div>
                         <label className="block text-sm font-bold text-gray-700 mb-2">กลุ่มเป้าหมาย</label>
-                        <select name="target_audience" className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none">
+                        <select name="target_audience" className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none">
                           <option value="">ทั้งหมด (All Users)</option>
                           {targetAudiences.map(ta => (
                             <option key={ta.id} value={ta.name}>{ta.name}</option>
@@ -1021,7 +1021,7 @@ export default function AdminDashboard() {
                                 setSelectedProducts([...selectedProducts, p.id]);
                               }
                             }}
-                            className={`p-4 border-2 rounded-2xl cursor-pointer transition-all ${selectedProducts.includes(p.id) ? 'border-[#059669] bg-[#059669]/5' : 'border-gray-100 hover:border-gray-200'}`}
+                            className={`p-4 border-2 rounded-2xl cursor-pointer transition-all ${selectedProducts.includes(p.id) ? 'border-[#ee4d2d] bg-[#ee4d2d]/5' : 'border-gray-100 hover:border-gray-200'}`}
                           >
                             <img src={p.image_url} className="w-full aspect-square object-cover rounded-xl mb-2" />
                             <div className="text-xs font-bold line-clamp-1">{p.name}</div>
@@ -1031,7 +1031,7 @@ export default function AdminDashboard() {
                       </div>
                     </div>
 
-                    <button type="submit" className="w-full bg-[#059669] text-white py-5 rounded-2xl font-bold text-xl shadow-xl shadow-[#059669]/20">
+                    <button type="submit" className="w-full bg-[#ee4d2d] text-white py-5 rounded-2xl font-bold text-xl shadow-xl shadow-[#ee4d2d]/20">
                       ยืนยันการสร้างโปรโมชัน
                     </button>
                   </form>
@@ -1088,7 +1088,7 @@ export default function AdminDashboard() {
                   <p className="text-sm text-gray-400 mt-1">สร้างโค้ดส่วนลดเพื่อให้ลูกค้ากรอกตอนชำระเงิน</p>
                 </div>
                 {!isCreatingCoupon && (
-                  <button onClick={() => { setIsCreatingCoupon(true); setSelectedProducts([]); }} className="bg-[#059669] text-white px-6 py-3 rounded-full font-bold shadow-lg shadow-[#059669]/20">สร้างโค้ดใหม่</button>
+                  <button onClick={() => { setIsCreatingCoupon(true); setSelectedProducts([]); }} className="bg-[#ee4d2d] text-white px-6 py-3 rounded-full font-bold shadow-lg shadow-[#ee4d2d]/20">สร้างโค้ดใหม่</button>
                 )}
               </div>
 
@@ -1101,40 +1101,40 @@ export default function AdminDashboard() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <label className="block text-sm font-bold text-gray-700 mb-2">ชื่อโค้ดส่วนลด</label>
-                        <input name="name" required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none" placeholder="เช่น โค้ดลดพิเศษ 10%" />
+                        <input name="name" required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none" placeholder="เช่น โค้ดลดพิเศษ 10%" />
                       </div>
                       <div>
                         <label className="block text-sm font-bold text-gray-700 mb-2">รหัสโค้ด (Code)</label>
-                        <input name="code" required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none" placeholder="เช่น SUMMER10" />
+                        <input name="code" required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none" placeholder="เช่น SUMMER10" />
                       </div>
                       <div className="grid grid-cols-2 gap-4">
                         <div>
                           <label className="block text-sm font-bold text-gray-700 mb-2">ประเภทส่วนลด</label>
-                          <select name="type" required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none">
+                          <select name="type" required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none">
                             <option value="percent">เปอร์เซ็นต์ (%)</option>
                             <option value="fixed">จำนวนเงินคงที่ (฿)</option>
                           </select>
                         </div>
                         <div>
                           <label className="block text-sm font-bold text-gray-700 mb-2">มูลค่าส่วนลด</label>
-                          <input name="value" type="number" step="0.01" required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none" placeholder="0.00" />
+                          <input name="value" type="number" step="0.01" required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none" placeholder="0.00" />
                         </div>
                       </div>
                       <div>
                         <label className="block text-sm font-bold text-gray-700 mb-2">ขั้นต่ำในการสั่งซื้อ (฿)</label>
-                        <input name="min_spend" type="number" step="0.01" className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none" placeholder="0.00" />
+                        <input name="min_spend" type="number" step="0.01" className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none" placeholder="0.00" />
                       </div>
                       <div>
                         <label className="block text-sm font-bold text-gray-700 mb-2">เวลาเริ่มต้น</label>
-                        <input name="start_time" type="datetime-local" required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none" />
+                        <input name="start_time" type="datetime-local" required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none" />
                       </div>
                       <div>
                         <label className="block text-sm font-bold text-gray-700 mb-2">เวลาสิ้นสุด</label>
-                        <input name="end_time" type="datetime-local" required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none" />
+                        <input name="end_time" type="datetime-local" required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none" />
                       </div>
                       <div>
                         <label className="block text-sm font-bold text-gray-700 mb-2">กลุ่มเป้าหมาย</label>
-                        <select name="target_audience" className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none">
+                        <select name="target_audience" className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none">
                           <option value="">ทั้งหมด (All Users)</option>
                           {targetAudiences.map(ta => (
                             <option key={ta.id} value={ta.name}>{ta.name}</option>
@@ -1156,7 +1156,7 @@ export default function AdminDashboard() {
                                 setSelectedProducts([...selectedProducts, p.id]);
                               }
                             }}
-                            className={`p-4 border-2 rounded-2xl cursor-pointer transition-all ${selectedProducts.includes(p.id) ? 'border-[#059669] bg-[#059669]/5' : 'border-gray-100 hover:border-gray-200'}`}
+                            className={`p-4 border-2 rounded-2xl cursor-pointer transition-all ${selectedProducts.includes(p.id) ? 'border-[#ee4d2d] bg-[#ee4d2d]/5' : 'border-gray-100 hover:border-gray-200'}`}
                           >
                             <img src={p.image_url} className="w-full aspect-square object-cover rounded-xl mb-2" />
                             <div className="text-xs font-bold line-clamp-1">{p.name}</div>
@@ -1165,7 +1165,7 @@ export default function AdminDashboard() {
                       </div>
                     </div>
 
-                    <button type="submit" className="w-full bg-[#059669] text-white py-5 rounded-2xl font-bold text-xl shadow-xl shadow-[#059669]/20">
+                    <button type="submit" className="w-full bg-[#ee4d2d] text-white py-5 rounded-2xl font-bold text-xl shadow-xl shadow-[#ee4d2d]/20">
                       ยืนยันการสร้างโค้ดส่วนลด
                     </button>
                   </form>
@@ -1188,7 +1188,7 @@ export default function AdminDashboard() {
                           <tr key={c.id} className="hover:bg-gray-50 transition-colors">
                             <td className="px-8 py-5">
                               <div className="font-bold">{c.name}</div>
-                              <div className="text-xs text-[#059669] font-mono">{c.code}</div>
+                              <div className="text-xs text-[#ee4d2d] font-mono">{c.code}</div>
                             </td>
                             <td className="px-8 py-5 text-sm">
                               {c.type === 'percent' ? `${c.value}%` : `฿${c.value}`}
@@ -1221,7 +1221,7 @@ export default function AdminDashboard() {
             <div className="space-y-6">
               <div className="flex bg-white p-1 rounded-2xl shadow-sm border border-gray-100 overflow-x-auto scrollbar-hide">
                 {['ทั้งหมด', 'ที่ต้องชำระ', 'ที่ต้องจัดส่ง', 'กำลังจัดส่ง', 'สำเร็จแล้ว', 'ยกเลิกแล้ว', 'คืนเงิน/คืนสินค้า'].map((t, i) => (
-                  <button key={t} className={`flex-shrink-0 px-6 py-3 rounded-xl text-sm font-bold transition-all ${i === 0 ? 'bg-[#059669] text-white shadow-md' : 'text-gray-500 hover:bg-gray-50'}`}>
+                  <button key={t} className={`flex-shrink-0 px-6 py-3 rounded-xl text-sm font-bold transition-all ${i === 0 ? 'bg-[#ee4d2d] text-white shadow-md' : 'text-gray-500 hover:bg-gray-50'}`}>
                     {t}
                   </button>
                 ))}
@@ -1258,10 +1258,10 @@ export default function AdminDashboard() {
                       ))}
                     </div>
                     <div className="p-6 bg-gray-50/30 border-t border-gray-50 flex items-center justify-between">
-                      <div className="text-sm text-gray-500">ยอดรวมคำสั่งซื้อ: <span className="text-xl font-bold text-[#059669] ml-2">฿{order.total_amount.toLocaleString()}</span></div>
+                      <div className="text-sm text-gray-500">ยอดรวมคำสั่งซื้อ: <span className="text-xl font-bold text-[#ee4d2d] ml-2">฿{order.total_amount.toLocaleString()}</span></div>
                       <div className="flex gap-2">
                         {order.status === 'to_ship' && (
-                          <button onClick={() => updateOrderStatus(order.id, 'shipping')} className="bg-[#059669] text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg shadow-[#059669]/20">จัดส่งสินค้า</button>
+                          <button onClick={() => updateOrderStatus(order.id, 'shipping')} className="bg-[#ee4d2d] text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg shadow-[#ee4d2d]/20">จัดส่งสินค้า</button>
                         )}
                         {order.status === 'shipping' && (
                           <button onClick={() => updateOrderStatus(order.id, 'completed')} className="bg-green-500 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg shadow-green-500/20">จัดส่งสำเร็จ</button>
@@ -1308,11 +1308,11 @@ export default function AdminDashboard() {
                     }} className="space-y-4">
                       <div>
                         <label className="block text-xs font-bold text-gray-400 uppercase mb-1">ชื่อกลุ่ม</label>
-                        <input name="name" required className="w-full p-3 bg-gray-50 border-none rounded-xl focus:ring-2 focus:ring-[#059669] outline-none text-sm" placeholder="เช่น ลูกค้าใหม่, VIP" />
+                        <input name="name" required className="w-full p-3 bg-gray-50 border-none rounded-xl focus:ring-2 focus:ring-[#ee4d2d] outline-none text-sm" placeholder="เช่น ลูกค้าใหม่, VIP" />
                       </div>
                       <div>
                         <label className="block text-xs font-bold text-gray-400 uppercase mb-1">ระดับการศึกษา</label>
-                        <select name="education_level" className="w-full p-3 bg-gray-50 border-none rounded-xl focus:ring-2 focus:ring-[#059669] outline-none text-sm">
+                        <select name="education_level" className="w-full p-3 bg-gray-50 border-none rounded-xl focus:ring-2 focus:ring-[#ee4d2d] outline-none text-sm">
                           <option value="">ไม่ระบุ</option>
                           <option value="มัธยมต้น">มัธยมต้น</option>
                           <option value="มัธยมปลาย">มัธยมปลาย</option>
@@ -1323,7 +1323,7 @@ export default function AdminDashboard() {
                       </div>
                       <div>
                         <label className="block text-xs font-bold text-gray-400 uppercase mb-1">ระดับ Royalty</label>
-                        <select name="royalty_level" className="w-full p-3 bg-gray-50 border-none rounded-xl focus:ring-2 focus:ring-[#059669] outline-none text-sm">
+                        <select name="royalty_level" className="w-full p-3 bg-gray-50 border-none rounded-xl focus:ring-2 focus:ring-[#ee4d2d] outline-none text-sm">
                           <option value="">ไม่ระบุ</option>
                           <option value="Bronze">Bronze</option>
                           <option value="Silver">Silver</option>
@@ -1333,21 +1333,21 @@ export default function AdminDashboard() {
                       </div>
                       <div>
                         <label className="block text-xs font-bold text-gray-400 uppercase mb-1">จังหวัด</label>
-                        <input name="province" className="w-full p-3 bg-gray-50 border-none rounded-xl focus:ring-2 focus:ring-[#059669] outline-none text-sm" placeholder="เช่น กรุงเทพฯ, เชียงใหม่" />
+                        <input name="province" className="w-full p-3 bg-gray-50 border-none rounded-xl focus:ring-2 focus:ring-[#ee4d2d] outline-none text-sm" placeholder="เช่น กรุงเทพฯ, เชียงใหม่" />
                       </div>
                       <div>
                         <label className="block text-xs font-bold text-gray-400 uppercase mb-1">คณะที่สนใจ</label>
-                        <input name="faculty" className="w-full p-3 bg-gray-50 border-none rounded-xl focus:ring-2 focus:ring-[#059669] outline-none text-sm" placeholder="เช่น วิศวกรรมศาสตร์, แพทยศาสตร์" />
+                        <input name="faculty" className="w-full p-3 bg-gray-50 border-none rounded-xl focus:ring-2 focus:ring-[#ee4d2d] outline-none text-sm" placeholder="เช่น วิศวกรรมศาสตร์, แพทยศาสตร์" />
                       </div>
                       <div>
                         <label className="block text-xs font-bold text-gray-400 uppercase mb-1">Tag ของลูกค้า</label>
-                        <input name="tags" className="w-full p-3 bg-gray-50 border-none rounded-xl focus:ring-2 focus:ring-[#059669] outline-none text-sm" placeholder="เช่น #สายเปย์, #ลูกค้าเก่า (คั่นด้วยคอมม่า)" />
+                        <input name="tags" className="w-full p-3 bg-gray-50 border-none rounded-xl focus:ring-2 focus:ring-[#ee4d2d] outline-none text-sm" placeholder="เช่น #สายเปย์, #ลูกค้าเก่า (คั่นด้วยคอมม่า)" />
                       </div>
                       <div>
                         <label className="block text-xs font-bold text-gray-400 uppercase mb-1">คำอธิบาย</label>
-                        <textarea name="description" className="w-full p-3 bg-gray-50 border-none rounded-xl focus:ring-2 focus:ring-[#059669] outline-none text-sm h-20" placeholder="ระบุรายละเอียดเพิ่มเติม..." />
+                        <textarea name="description" className="w-full p-3 bg-gray-50 border-none rounded-xl focus:ring-2 focus:ring-[#ee4d2d] outline-none text-sm h-20" placeholder="ระบุรายละเอียดเพิ่มเติม..." />
                       </div>
-                      <button type="submit" className="w-full bg-[#059669] text-white py-3 rounded-xl font-bold shadow-lg shadow-[#059669]/20 hover:bg-[#047857] transition-all">
+                      <button type="submit" className="w-full bg-[#ee4d2d] text-white py-3 rounded-xl font-bold shadow-lg shadow-[#ee4d2d]/20 hover:bg-[#f05d40] transition-all">
                         บันทึกกลุ่มเป้าหมาย
                       </button>
                     </form>
@@ -1417,15 +1417,15 @@ export default function AdminDashboard() {
                   <form onSubmit={handleSaveAd} className="space-y-6">
                     <div>
                       <label className="block text-sm font-bold text-gray-700 mb-2">หัวข้อโฆษณา</label>
-                      <input name="title" defaultValue={isEditingAd.title} required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none transition-all" />
+                      <input name="title" defaultValue={isEditingAd.title} required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none transition-all" />
                     </div>
                     <div>
                       <label className="block text-sm font-bold text-gray-700 mb-2">ลิงก์ปลายทาง</label>
-                      <input name="link_url" defaultValue={isEditingAd.link_url} className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none transition-all" placeholder="/category/1 หรือ https://..." />
+                      <input name="link_url" defaultValue={isEditingAd.link_url} className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none transition-all" placeholder="/category/1 หรือ https://..." />
                     </div>
                     <div>
                       <label className="block text-sm font-bold text-gray-700 mb-2">ตำแหน่ง</label>
-                      <select name="position" defaultValue={isEditingAd.position} className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none transition-all">
+                      <select name="position" defaultValue={isEditingAd.position} className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none transition-all">
                         <option value="home_top">หน้าหลัก (บน)</option>
                         <option value="home_middle">หน้าหลัก (กลาง)</option>
                       </select>
@@ -1448,10 +1448,10 @@ export default function AdminDashboard() {
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
-                      <input type="checkbox" name="active" defaultChecked={isEditingAd.active === 1} className="w-5 h-5 accent-[#059669]" />
+                      <input type="checkbox" name="active" defaultChecked={isEditingAd.active === 1} className="w-5 h-5 accent-[#ee4d2d]" />
                       <label className="text-sm font-bold text-gray-700">เปิดใช้งาน</label>
                     </div>
-                    <button type="submit" className="w-full bg-[#059669] text-white py-4 rounded-2xl font-bold shadow-lg shadow-[#059669]/20 hover:bg-[#047857] transition-all">
+                    <button type="submit" className="w-full bg-[#ee4d2d] text-white py-4 rounded-2xl font-bold shadow-lg shadow-[#ee4d2d]/20 hover:bg-[#f05d40] transition-all">
                       บันทึกโฆษณา
                     </button>
                   </form>
@@ -1487,7 +1487,7 @@ export default function AdminDashboard() {
                     <div className="col-span-full py-20 text-center text-gray-300">
                       <Megaphone size={64} className="mx-auto mb-4 opacity-10" />
                       <p className="text-lg">ยังไม่มีโฆษณา</p>
-                      <button onClick={() => setIsEditingAd({ active: 1, position: 'home_top' })} className="mt-4 text-[#059669] font-bold hover:underline">สร้างโฆษณาแรกของคุณ</button>
+                      <button onClick={() => setIsEditingAd({ active: 1, position: 'home_top' })} className="mt-4 text-[#ee4d2d] font-bold hover:underline">สร้างโฆษณาแรกของคุณ</button>
                     </div>
                   )}
                 </div>
@@ -1500,7 +1500,7 @@ export default function AdminDashboard() {
             <div className="max-w-4xl mx-auto space-y-8">
               <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
                 <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-                  <Monitor className="text-[#059669]" size={24} />
+                  <Monitor className="text-[#ee4d2d]" size={24} />
                   จัดการเนื้อหาหน้าหลัก (Hero Section)
                 </h3>
                 <form onSubmit={handleSaveSiteConfig} className="space-y-6">
@@ -1508,11 +1508,11 @@ export default function AdminDashboard() {
                     <div className="space-y-6">
                       <div>
                         <label className="block text-sm font-bold text-gray-700 mb-2">หัวข้อหลัก (Hero Title)</label>
-                        <input name="hero_title" defaultValue={siteConfig.hero_title} required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none transition-all" />
+                        <input name="hero_title" defaultValue={siteConfig.hero_title} required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none transition-all" />
                       </div>
                       <div>
                         <label className="block text-sm font-bold text-gray-700 mb-2">หัวข้อย่อย (Hero Subtitle)</label>
-                        <textarea name="hero_subtitle" defaultValue={siteConfig.hero_subtitle} required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none transition-all h-32" />
+                        <textarea name="hero_subtitle" defaultValue={siteConfig.hero_subtitle} required className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none transition-all h-32" />
                       </div>
                     </div>
                     <div>
@@ -1533,7 +1533,7 @@ export default function AdminDashboard() {
                     </div>
                   </div>
                   <div className="pt-6 border-t">
-                    <button type="submit" className="w-full bg-[#059669] text-white py-4 rounded-2xl font-bold shadow-lg shadow-[#059669]/20 hover:bg-[#047857] transition-all">
+                    <button type="submit" className="w-full bg-[#ee4d2d] text-white py-4 rounded-2xl font-bold shadow-lg shadow-[#ee4d2d]/20 hover:bg-[#f05d40] transition-all">
                       บันทึกการตั้งค่าหน้าเว็บ
                     </button>
                   </div>
@@ -1602,7 +1602,7 @@ export default function AdminDashboard() {
                                 if (slugInput) slugInput.value = slug;
                               }
                             }}
-                            className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none text-lg font-bold" 
+                            className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none text-lg font-bold" 
                             placeholder="ระบุหัวข้อบทความ..." 
                           />
                         </div>
@@ -1613,27 +1613,27 @@ export default function AdminDashboard() {
                             name="content" 
                             defaultValue={isEditingArticle.content} 
                             required 
-                            className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none h-[400px] font-serif leading-relaxed" 
+                            className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none h-[400px] font-serif leading-relaxed" 
                             placeholder="เขียนเนื้อหาบทความที่นี่... คุณสามารถใส่ลิงก์หรือโค้ด HTML ได้" 
                           />
                         </div>
 
                         <div className="bg-gray-50 p-6 rounded-3xl border border-gray-100 space-y-4">
                           <h4 className="font-bold text-gray-700 flex items-center gap-2">
-                            <Search size={18} className="text-[#059669]" /> ตั้งค่า SEO (SEO Template)
+                            <Search size={18} className="text-[#ee4d2d]" /> ตั้งค่า SEO (SEO Template)
                           </h4>
                           <div className="grid grid-cols-1 gap-4">
                             <div>
                               <label className="block text-xs font-bold text-gray-400 uppercase mb-1">URL Slug</label>
-                              <input name="slug" defaultValue={isEditingArticle.slug} required className="w-full p-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#059669] outline-none text-sm" placeholder="article-url-slug" />
+                              <input name="slug" defaultValue={isEditingArticle.slug} required className="w-full p-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#ee4d2d] outline-none text-sm" placeholder="article-url-slug" />
                             </div>
                             <div>
                               <label className="block text-xs font-bold text-gray-400 uppercase mb-1">Meta Title</label>
-                              <input name="meta_title" defaultValue={isEditingArticle.meta_title} className="w-full p-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#059669] outline-none text-sm" placeholder="หัวข้อสำหรับ Google Search" />
+                              <input name="meta_title" defaultValue={isEditingArticle.meta_title} className="w-full p-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#ee4d2d] outline-none text-sm" placeholder="หัวข้อสำหรับ Google Search" />
                             </div>
                             <div>
                               <label className="block text-xs font-bold text-gray-400 uppercase mb-1">Meta Description</label>
-                              <textarea name="meta_description" defaultValue={isEditingArticle.meta_description} className="w-full p-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#059669] outline-none text-sm h-20" placeholder="คำอธิบายสั้นๆ สำหรับ Google Search" />
+                              <textarea name="meta_description" defaultValue={isEditingArticle.meta_description} className="w-full p-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#ee4d2d] outline-none text-sm h-20" placeholder="คำอธิบายสั้นๆ สำหรับ Google Search" />
                             </div>
                           </div>
                         </div>
@@ -1675,7 +1675,7 @@ export default function AdminDashboard() {
                                 onChange={(e) => setIsEditingArticle({ ...isEditingArticle, is_recommended: e.target.checked ? 1 : 0 })}
                                 className="sr-only"
                               />
-                              <div className={`w-12 h-6 rounded-full transition-colors ${isEditingArticle.is_recommended === 1 ? 'bg-[#059669]' : 'bg-gray-300'}`}></div>
+                              <div className={`w-12 h-6 rounded-full transition-colors ${isEditingArticle.is_recommended === 1 ? 'bg-[#ee4d2d]' : 'bg-gray-300'}`}></div>
                               <div className={`absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform ${isEditingArticle.is_recommended === 1 ? 'translate-x-6' : ''}`}></div>
                             </div>
                             <span className="font-bold text-gray-700">แนะนำบทความนี้ (แสดงบนหน้าแรก)</span>
@@ -1694,7 +1694,7 @@ export default function AdminDashboard() {
                                   const next = current.includes(p.id) ? current.filter((id: number) => id !== p.id) : [...current, p.id];
                                   setIsEditingArticle({ ...isEditingArticle, product_ids: next });
                                 }}
-                                className={`flex items-center gap-3 p-2 rounded-xl cursor-pointer transition-all ${isEditingArticle.product_ids?.includes(p.id) ? 'bg-[#059669] text-white' : 'bg-white hover:bg-gray-100 text-gray-700'}`}
+                                className={`flex items-center gap-3 p-2 rounded-xl cursor-pointer transition-all ${isEditingArticle.product_ids?.includes(p.id) ? 'bg-[#ee4d2d] text-white' : 'bg-white hover:bg-gray-100 text-gray-700'}`}
                               >
                                 <img src={p.image_url} className="w-10 h-10 rounded-lg object-cover" />
                                 <div className="text-xs font-bold flex-1 truncate">{p.name}</div>
@@ -1707,7 +1707,7 @@ export default function AdminDashboard() {
                       </div>
                     </div>
 
-                    <button type="submit" className="w-full bg-[#059669] text-white py-5 rounded-2xl font-bold text-xl shadow-xl shadow-[#059669]/20 hover:bg-[#047857] transition-all">
+                    <button type="submit" className="w-full bg-[#ee4d2d] text-white py-5 rounded-2xl font-bold text-xl shadow-xl shadow-[#ee4d2d]/20 hover:bg-[#f05d40] transition-all">
                       {isEditingArticle.id ? 'บันทึกการแก้ไขบทความ' : 'เผยแพร่บทความ'}
                     </button>
                   </form>
@@ -1756,7 +1756,7 @@ export default function AdminDashboard() {
                             {article.is_recommended === 1 && (
                               <div className="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full">บทความที่แนะนำในหน้าแรก</div>
                             )}
-                            <div className="text-[10px] font-bold text-[#059669] bg-[#059669]/5 px-2 py-1 rounded-full">SEO Optimized</div>
+                            <div className="text-[10px] font-bold text-[#ee4d2d] bg-[#ee4d2d]/5 px-2 py-1 rounded-full">SEO Optimized</div>
                           </div>
                         </div>
                       </div>
@@ -1768,7 +1768,7 @@ export default function AdminDashboard() {
                       <p className="text-lg font-medium">ยังไม่มีบทความ</p>
                       <button 
                         onClick={() => setIsEditingArticle({ title: '', slug: '', content: '', meta_title: '', meta_description: '', thumbnail_url: '', product_ids: [] })} 
-                        className="mt-4 text-[#059669] font-bold hover:underline"
+                        className="mt-4 text-[#ee4d2d] font-bold hover:underline"
                       >
                         เริ่มเขียนบทความแรกของคุณ
                       </button>
@@ -1796,7 +1796,7 @@ export default function AdminDashboard() {
                     value={newCategory}
                     onChange={(e) => setNewCategory(e.target.value)}
                     placeholder="ชื่อหมวดหมู่..."
-                    className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none"
+                    className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none"
                   />
                 </div>
 
@@ -1807,7 +1807,7 @@ export default function AdminDashboard() {
                     value={newCategoryHeadline}
                     onChange={(e) => setNewCategoryHeadline(e.target.value)}
                     placeholder="เช่น คอลเลกชันใหม่ล่าสุด..."
-                    className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#059669] outline-none"
+                    className="w-full p-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-[#ee4d2d] outline-none"
                   />
                 </div>
 
@@ -1840,7 +1840,7 @@ export default function AdminDashboard() {
 
               <div className="flex gap-3">
                 <button onClick={() => { setShowCatModal(false); setIsEditingCategory(null); setNewCategory(''); setNewCategoryPromo(''); setNewCategoryHeadline(''); }} className="flex-1 py-4 rounded-2xl font-bold text-gray-500 hover:bg-gray-100 transition-colors">ยกเลิก</button>
-                <button onClick={handleAddCategory} className="flex-1 bg-[#059669] text-white py-4 rounded-2xl font-bold shadow-lg shadow-[#059669]/20">
+                <button onClick={handleAddCategory} className="flex-1 bg-[#ee4d2d] text-white py-4 rounded-2xl font-bold shadow-lg shadow-[#ee4d2d]/20">
                   {isEditingCategory ? 'บันทึกการแก้ไข' : 'เพิ่มหมวดหมู่'}
                 </button>
               </div>
